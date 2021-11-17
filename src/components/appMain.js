@@ -6,6 +6,7 @@ class App extends Component {
     super(props);
 
     this.Button = React.createRef();
+    this.App = React.createRef();
   }
 
   render() {
