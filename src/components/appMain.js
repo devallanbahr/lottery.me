@@ -29,7 +29,7 @@ class App extends Component {
         );
         selectedNumbersArr = arr;
         arr = [];
-        console.log(selectNumbersArr);
+        console.log(selectedNumbersArr);
       } else {
         arr.push(e.target.value);
       }
