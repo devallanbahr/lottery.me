@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Main, Container, Input } from "../stylesheets/Style";
+import { Main, Container, Input } from "../stylesheets/appStyle";
 
 class App extends Component {
   constructor(props) {
