@@ -26,7 +26,7 @@ class App extends Component {
         selectedNumbersArr = arr;
         arr = [];
       } else {
-        if (selectedNumbersArr.length === 0) {
+        if (selectedNumbersArr.length === 6) {
           alert("Você já selecionou os números");
         } else {
           arr.push(e.target.value);
