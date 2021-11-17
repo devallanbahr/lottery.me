@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Main, Container, Input } from "../stylesheets/appStyle";
 
+var arr = [];
+var selectedNumbersArr = [];
 class App extends Component {
   constructor(props) {
     super(props);
@@ -10,8 +12,6 @@ class App extends Component {
   }
 
   render() {
-    var arr = [];
-    var selectedNumbersArr = [];
     const getArray = () => {
       if (arr.includes("Set")) {
         console.log("Yeah");
