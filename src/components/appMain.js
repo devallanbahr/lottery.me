@@ -23,15 +23,14 @@ class App extends Component {
     };
     const selectNumbers = (e) => {
       if (arr.length >= 6) {
-        console.log(
-          "%c[Error]: Array Cheio",
-          "color: #f00; font-family: Consolas; font-size: 12px; font-weight: bold;"
-        );
         selectedNumbersArr = arr;
         arr = [];
-        console.log(selectedNumbersArr);
       } else {
-        arr.push(e.target.value);
+        if (selectedNumbersArr.length === 0) {
+          alert("Você já selecionou os números");
+        } else {
+          arr.push(e.target.value);
+        }
       }
     };
     return (
