@@ -14,7 +14,6 @@ class App extends Component {
     var sortedNumbersArr = [];
     const insertArray = (e) => {
       if (selectedNumbersArr.length === 6) {
-        alert("Você já selecionou os números");
         for (let i = 0; i < selectedNumbersArr.length; i++) {
           sortArray();
 
@@ -22,6 +21,8 @@ class App extends Component {
             console.log(`Os numeros sorteados foram ${sortedNumbersArr[i]}`);
           }
         }
+        selectedNumbersArr = [];
+        sortedNumbersArr = [];
       } else {
         selectedNumbersArr.push(e.target.value);
         console.log(selectedNumbersArr);
