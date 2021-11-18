@@ -18,7 +18,7 @@ class App extends Component {
           sortArray();
           var sorted = selectedNumbersArr.includes(sortedNumbersArr[i]);
           if (sorted) {
-            console.log(`Você acertou: ${sorted.length} números!`);
+            console.log(`Você acertou: ${sorted.valueOf()} números!`);
             console.log(`Sendo eles: ${sortedNumbersArr[i]}`);
           }
         }
@@ -26,6 +26,7 @@ class App extends Component {
         sortedNumbersArr = [];
       } else {
         selectedNumbersArr.push(parseInt(e.target.value));
+        e.target.enabled = false;
         console.log(selectedNumbersArr);
       }
     };
