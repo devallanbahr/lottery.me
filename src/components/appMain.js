@@ -13,7 +13,7 @@ class App extends Component {
     var selectedNumbersArr = [];
     var sortedNumbersArr = [];
     const insertArray = (e) => {
-      if (selectedNumbersArr.length > 5) {
+      if (selectedNumbersArr.length === 6) {
         for (let i = 0; i < selectedNumbersArr.length; i++) {
           sortArray();
           var sorted = selectedNumbersArr.includes(sortedNumbersArr[i]);
