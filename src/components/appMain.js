@@ -28,7 +28,7 @@ class App extends Component {
       }
     };
     const sortArray = () => {
-      const random = Math.floor(Math.random() * 61);
+      const random = Math.floor(Math.random() * 6);
       sortedNumbersArr.push(random);
     };
     return (
