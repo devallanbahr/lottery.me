@@ -29,7 +29,7 @@ class App extends Component {
       }
     };
     const sortArray = () => {
-      const random = Math.floor(Math.random() * 6);
+      const random = Math.floor(Math.random() * 11);
       sortedNumbersArr.push(random);
     };
     return (
@@ -65,6 +65,12 @@ class App extends Component {
             onClick={insertArray}
             type="button"
             value={5}
+          />
+          <Input
+            ref={this.Button}
+            onClick={insertArray}
+            type="button"
+            value={6}
           />
         </div>
       </Container>
