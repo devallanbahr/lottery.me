@@ -10,8 +10,9 @@ class App extends Component {
   }
 
   render() {
-    const arr = [];
-    const selectedNumbersArr = [];
+    var arr = [];
+    var selectedNumbersArr = [];
+    var sortedNumbersArr = [];
     const getArray = () => {
       if (arr.includes("Set")) {
         console.log("Yeah");
@@ -24,9 +25,7 @@ class App extends Component {
     const selectNumbers = (e) => {
       if (arr.length >= 6) {
         selectedNumbersArr = arr;
-        for (let i = 0; i < arr.length; i++) {
-          arr.pop(i);
-        }
+        arr = [];
       } else {
         if (selectedNumbersArr.length === 6) {
           alert("Você já selecionou os números");
