@@ -25,7 +25,7 @@ class App extends Component {
       if (arr.length >= 6) {
         selectedNumbersArr = arr;
         for (let i = 0; i < arr.length; i++) {
-          arr.pop();
+          arr.pop(i);
         }
       } else {
         if (selectedNumbersArr.length === 6) {
