@@ -21,11 +21,10 @@ class App extends Component {
             let numbersWon = console.log(
               `Você acertou: ${sortedNumbersArr[i]}!`
             );
-            console.log(sorted[i]);
           }
+          selectedNumbersArr = [];
+          sortedNumbersArr = [];
         }
-        selectedNumbersArr = [];
-        sortedNumbersArr = [];
       } else {
         selectedNumbersArr.push(parseInt(e.target.value));
         console.log(selectedNumbersArr);
