@@ -18,7 +18,7 @@ class App extends Component {
           sortArray();
           var sorted = selectedNumbersArr.includes(sortedNumbersArr[i]);
           if (sorted) {
-            console.log(`Você acertou: ${sorted}`);
+            console.log(`Você acertou: ${sorted[i]}`);
           }
         }
         selectedNumbersArr = [];
