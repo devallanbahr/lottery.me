@@ -24,7 +24,7 @@ class App extends Component {
         selectedNumbersArr = [];
         sortedNumbersArr = [];
       } else {
-        selectedNumbersArr.push(e.target.value);
+        selectedNumbersArr.push(parseInt(e.target.value));
         console.log(selectedNumbersArr);
       }
     };
