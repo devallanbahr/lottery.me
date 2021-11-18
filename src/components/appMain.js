@@ -24,7 +24,9 @@ class App extends Component {
     const selectNumbers = (e) => {
       if (arr.length >= 6) {
         selectedNumbersArr = arr;
-        arr = [];
+        for (let i = 0; i < arr.length; i++) {
+          arr.pop();
+        }
       } else {
         if (selectedNumbersArr.length === 6) {
           alert("Você já selecionou os números");
