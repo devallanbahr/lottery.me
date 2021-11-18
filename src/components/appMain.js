@@ -11,28 +11,34 @@ class App extends Component {
 
   render() {
     var selectedNumbersArr = [];
+    var yourNumbersArr = [];
     var sortedNumbersArr = [];
     const insertArray = (e) => {
       if (selectedNumbersArr.length === 6) {
-        for (let i = 0; i < selectedNumbersArr.length; i++) {
-          sortArray();
-          var sorted = selectedNumbersArr.includes(sortedNumbersArr[i]);
-          if (sorted) {
-            let numbersWon = console.log(
-              `Você acertou: ${sortedNumbersArr[i]}!`
-            );
-          }
-          selectedNumbersArr = [];
-          sortedNumbersArr = [];
-        }
+        sortArray();
       } else {
         selectedNumbersArr.push(parseInt(e.target.value));
         console.log(selectedNumbersArr);
       }
     };
     const sortArray = () => {
-      const random = Math.floor(Math.random() * 11);
-      sortedNumbersArr.push(random);
+      var random;
+      for (let i = 0; i < selectedNumbersArr.length; i++) {
+        random = Math.floor(Math.random() * 1 * 11);
+        sortedNumbersArr.push(random);
+      }
+      for (let i = 0; i < sortedNumbersArr.length; i++) {
+        if (selectedNumbersArr.includes(sortedNumbersArr[i])) {
+          console.log(
+            `Você acertou o nº ${sortedNumbersArr[i]}! dos números sorteados ${sortedNumbersArr}`
+          );
+          yourNumbersArr.push(sortedNumbersArr[i]);
+          console.log(`Quantidade de acertos: ${yourNumbersArr.length}`);
+        } else {
+        }
+      }
+      selectedNumbersArr = [];
+      sortedNumbersArr = [];
     };
     return (
       <Container>
