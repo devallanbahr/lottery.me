@@ -13,12 +13,12 @@ class App extends Component {
     var selectedNumbersArr = [];
     var sortedNumbersArr = [];
     const insertArray = (e) => {
-      if (selectedNumbersArr.length >= 6) {
+      if (selectedNumbersArr.length > 5) {
         for (let i = 0; i < selectedNumbersArr.length; i++) {
           sortArray();
-
-          if (selectedNumbersArr.includes(sortedNumbersArr[i])) {
-            console.log(`Você acertou: ${sortedNumbersArr}`);
+          var sorted = selectedNumbersArr.includes(sortedNumbersArr[i]);
+          if (sorted) {
+            console.log(`Você acertou: ${sorted}`);
           }
         }
         selectedNumbersArr = [];
