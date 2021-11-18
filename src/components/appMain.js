@@ -21,7 +21,7 @@ class App extends Component {
             let numbersWon = console.log(
               `Você acertou: ${sortedNumbersArr[i]}!`
             );
-            console.log(sortedNumbersArr[i].length);
+            console.log(sorted[i]);
           }
         }
         selectedNumbersArr = [];
