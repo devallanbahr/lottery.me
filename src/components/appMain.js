@@ -15,13 +15,22 @@ class App extends Component {
     const insertArray = (e) => {
       if (selectedNumbersArr.length === 6) {
         alert("Você já selecionou os números");
-        sortArray(selectedNumbersArr);
+        for (let i = 0; i < selectedNumbersArr.length; i++) {
+          sortArray();
+
+          if (selectedNumbersArr.includes(sortedNumbersArr[i])) {
+            console.log(`Os numeros sorteados foram ${sortedNumbersArr[i]}`);
+          }
+        }
       } else {
         selectedNumbersArr.push(e.target.value);
         console.log(selectedNumbersArr);
       }
     };
-    const sortArray = () => {};
+    const sortArray = () => {
+      const random = Math.floor(Math.random() * 61);
+      sortedNumbersArr.push(random);
+    };
     return (
       <Container>
         <Main />
@@ -30,7 +39,31 @@ class App extends Component {
             ref={this.Button}
             onClick={insertArray}
             type="button"
-            value="Set Array"
+            value={1}
+          />
+          <Input
+            ref={this.Button}
+            onClick={insertArray}
+            type="button"
+            value={2}
+          />
+          <Input
+            ref={this.Button}
+            onClick={insertArray}
+            type="button"
+            value={3}
+          />
+          <Input
+            ref={this.Button}
+            onClick={insertArray}
+            type="button"
+            value={4}
+          />
+          <Input
+            ref={this.Button}
+            onClick={insertArray}
+            type="button"
+            value={5}
           />
         </div>
       </Container>
