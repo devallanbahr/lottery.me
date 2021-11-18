@@ -10,29 +10,18 @@ class App extends Component {
   }
 
   render() {
-    var arr = [];
     var selectedNumbersArr = [];
     var sortedNumbersArr = [];
-    const getArray = () => {
-      if (arr.includes("Set")) {
-        console.log("Yeah");
-      } else if (arr.length === 0) {
-        console.log("Array vazio!");
+    const insertArray = (e) => {
+      if (selectedNumbersArr.length === 6) {
+        alert("Você já selecionou os números");
+        sortArray(selectedNumbersArr);
       } else {
-        console.log(arr);
+        selectedNumbersArr.push(e.target.value);
       }
     };
-    const selectNumbers = (e) => {
-      if (arr.length >= 6) {
-        selectedNumbersArr = arr;
-        arr = [];
-      } else {
-        if (selectedNumbersArr.length === 6) {
-          alert("Você já selecionou os números");
-        } else {
-          arr.push(e.target.value);
-        }
-      }
+    const sortArray = (arr) => {
+      console.log(arr);
     };
     return (
       <Container>
@@ -40,15 +29,9 @@ class App extends Component {
         <div>
           <Input
             ref={this.Button}
-            onClick={selectNumbers}
+            onClick={insertArray}
             type="button"
             value="Set Array"
-          />
-          <Input
-            ref={this.Button}
-            onClick={getArray}
-            type="button"
-            value="Get Array"
           />
         </div>
       </Container>
