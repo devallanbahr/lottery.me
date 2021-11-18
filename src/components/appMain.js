@@ -25,7 +25,6 @@ class App extends Component {
         sortedNumbersArr = [];
       } else {
         selectedNumbersArr.push(parseInt(e.target.value));
-        e.target.enabled = false;
         console.log(selectedNumbersArr);
       }
     };
