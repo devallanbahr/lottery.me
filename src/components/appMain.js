@@ -10,8 +10,8 @@ class App extends Component {
   }
 
   render() {
-    var arr = [];
-    var selectedNumbersArr = [];
+    const arr = [];
+    const selectedNumbersArr = [];
     const getArray = () => {
       if (arr.includes("Set")) {
         console.log("Yeah");
