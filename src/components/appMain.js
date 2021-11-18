@@ -18,11 +18,10 @@ class App extends Component {
         sortArray(selectedNumbersArr);
       } else {
         selectedNumbersArr.push(e.target.value);
+        console.log(selectedNumbersArr);
       }
     };
-    const sortArray = (arr) => {
-      console.log(arr);
-    };
+    const sortArray = () => {};
     return (
       <Container>
         <Main />
