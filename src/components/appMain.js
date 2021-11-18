@@ -29,14 +29,13 @@ class App extends Component {
       }
       for (let i = 0; i < sortedNumbersArr.length; i++) {
         if (selectedNumbersArr.includes(sortedNumbersArr[i])) {
-          console.log(
-            `Você acertou o nº ${sortedNumbersArr[i]}! dos números sorteados ${sortedNumbersArr}`
-          );
           yourNumbersArr.push(sortedNumbersArr[i]);
-          console.log(`Quantidade de acertos: ${yourNumbersArr.length}`);
-        } else {
         }
       }
+      console.log(
+        `Você acertou o nº ${yourNumbersArr}! dos números sorteados ${sortedNumbersArr}`
+      );
+      console.log(`Quantidade de acertos: ${yourNumbersArr.length}`);
       selectedNumbersArr = [];
       sortedNumbersArr = [];
     };
