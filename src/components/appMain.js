@@ -32,6 +32,7 @@ class App extends Component {
     const sortArray = () => {
       const random = Math.floor(Math.random() * 11);
       sortedNumbersArr.push(random);
+      console.log(sortedNumbersArr);
     };
     return (
       <Container>
