@@ -38,6 +38,7 @@ class App extends Component {
       console.log(`Quantidade de acertos: ${yourNumbersArr.length}`);
       selectedNumbersArr = [];
       sortedNumbersArr = [];
+      yourNumbersArr = [];
     };
     return (
       <Container>
