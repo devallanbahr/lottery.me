@@ -30,10 +30,14 @@ class App extends Component {
           this.yourNumbersArr.push(this.sortedNumbersArr[i]);
         }
       }
-      console.log(
-        `Você acertou o nº ${this.yourNumbersArr}! dos números sorteados ${this.sortedNumbersArr}`
-      );
-      console.log(`Quantidade de acertos: ${this.yourNumbersArr.length}`);
+      if (this.yourNumbersArr.length === 0) {
+        console.log("Você não acertou nenhum!");
+      } else {
+        console.log(
+          `Você acertou o nº ${this.yourNumbersArr}! dos números sorteados ${this.sortedNumbersArr}`
+        );
+        console.log(`Quantidade de acertos: ${this.yourNumbersArr.length}`);
+      }
       this.selectedNumbersArr = [];
       this.sortedNumbersArr = [];
       this.yourNumbersArr = [];
