@@ -15,7 +15,7 @@ body{
 }
 
 `;
-export const Container = styled.div`
+export const AppMain = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
