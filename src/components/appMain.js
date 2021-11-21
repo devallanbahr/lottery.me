@@ -134,24 +134,18 @@ class App extends Component {
             value={10}
           />
           <div>
+            <p ref={this.qntdHits}></p>
+            <p ref={this.numHits}></p>
+            <p ref={this.numSorts}></p>
+          </div>
+          <footer>
             <Input
               onClick={selectArray}
               ref={this.button}
               type="button"
               value="Sort"
             />
-            <div>
-              <p>
-                Quantidade de Acertos: <span ref={this.qntdHits}> </span>
-              </p>
-              <p>
-                Números acertados: <span ref={this.numHits}> </span>
-              </p>
-              <p>
-                Números sorteados: <span ref={this.numSorts}> </span>
-              </p>
-            </div>
-          </div>
+          </footer>
         </div>
       </AppMain>
     );

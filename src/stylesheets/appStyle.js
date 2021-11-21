@@ -15,7 +15,17 @@ body{
     div{
       text-align: center;
     }
-
+    footer{
+      position: fixed;
+      display: flex;
+      text-align: center;
+      margin: 0 auto;
+      height: 75vh;
+      width: 100%;
+      left: 0%;
+      justify-content: center;
+      align-items: center;
+    }
 }
 
 `;
