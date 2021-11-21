@@ -12,9 +12,7 @@ class App extends Component {
 
     // Referencies //
     this.buttonElement = React.createRef();
-    this.numHits = React.createRef();
-    this.numSorts = React.createRef();
-    this.qntdHits = React.createRef();
+    this.alertElement = React.createRef();
 
     // Arrays //
     this.selectedNumbersArr = [];
@@ -34,14 +32,18 @@ class App extends Component {
         this.selectedNumbersArr.push(parseInt(e.target.value));
         console.log(this.selectedNumbersArr);
       } else {
-        alert("Números selecionados! Faça o sorteio.");
+        this.alertElement.current.textContent = ` 
+          Números selecionados! Faça o sorteio.
+        `;
+        this.timerSort = setInterval(() => clearArrays(), 2000);
       }
     };
     const selectArray = () => {
       if (this.selectedNumbersArr.length == 6) {
         sortArray();
       } else {
-        alert("Selecione os 6 números antes de sortear!");
+        this.alertElement.current.textContent = `Selecione os 6 números antes de sortear!`;
+        this.timerSort = setInterval(() => clearArrays(), 2000);
       }
     };
     const sortArray = () => {
@@ -58,27 +60,28 @@ class App extends Component {
         }
       }
       if (this.yourNumbersArr.length === 0) {
-        this.numHits.current.textContent = `Você não acertou nenhum!`;
+        this.alertElement.current.textContent = `Você não acertou nenhum!`;
       } else {
-        this.numSorts.current.textContent = `Números sorteados: ${this.sortedNumbersArr}`;
-        this.numHits.current.textContent = `Você acertou o nº ${this.yourNumbersArr}!`;
-        this.qntdHits.current.textContent = `Quantidade de acertos: ${this.yourNumbersArr.length}`;
+        this.alertElement.current.textContent = `Você acertou o nº ${this.yourNumbersArr}! 
+        Números sorteados: ${this.sortedNumbersArr}
+        Quantidade de acertos: ${this.yourNumbersArr.length}
+        `;
       }
-      this.timerSort = setInterval(() => clearArrays(), 3000);
-    };
-    const clearArrays = () => {
       this.selectedNumbersArr = [];
       this.sortedNumbersArr = [];
       this.yourNumbersArr = [];
-      this.numHits.current.textContent = ``;
-      this.numSorts.current.textContent = ``;
-      this.numHits.current.textContent = ``;
-      this.qntdHits.current.textContent = ``;
+      this.timerSort = setInterval(() => clearArrays(), 3000);
+    };
+    const clearArrays = () => {
+      this.alertElement.current.textContent = ``;
       clearTimeout(this.timerSort);
     };
     return (
       <AppMain>
         <Main />
+        <header>
+          <p className="alert" ref={this.alertElement}></p>
+        </header>
         <div>
           <Input
             ref={this.button}
@@ -140,11 +143,7 @@ class App extends Component {
             type="button"
             value={10}
           />
-          <div>
-            <p ref={this.qntdHits}></p>
-            <p ref={this.numHits}></p>
-            <p ref={this.numSorts}></p>
-          </div>
+
           <footer>
             <Input
               onClick={selectArray}

@@ -26,6 +26,12 @@ body{
       justify-content: center;
       align-items: center;
     }
+    header{
+      position: absolute;
+      top: 5vh;
+      color: #acc;
+      font-size: 14px;
+    }
 }
 
 `;
