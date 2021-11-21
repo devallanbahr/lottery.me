@@ -30,12 +30,12 @@ class App extends Component {
     const insertArray = (e) => {
       if (this.selectedNumbersArr.length < 6) {
         this.selectedNumbersArr.push(parseInt(e.target.value));
-        console.log(this.selectedNumbersArr);
+        this.alertElement.current.textContent = this.selectedNumbersArr;
       } else {
         this.alertElement.current.textContent = ` 
-          Números selecionados! Faça o sorteio.
+          Números selecionados! Faça o sorteio!
         `;
-        this.timerSort = setInterval(() => clearArrays(), 2000);
+        this.timerSort = setInterval(() => clearArrays(), 1500);
       }
     };
     const selectArray = () => {
@@ -43,7 +43,7 @@ class App extends Component {
         sortArray();
       } else {
         this.alertElement.current.textContent = `Selecione os 6 números antes de sortear!`;
-        this.timerSort = setInterval(() => clearArrays(), 2000);
+        this.timerSort = setInterval(() => clearArrays(), 3000);
       }
     };
     const sortArray = () => {
@@ -70,7 +70,7 @@ class App extends Component {
       this.selectedNumbersArr = [];
       this.sortedNumbersArr = [];
       this.yourNumbersArr = [];
-      this.timerSort = setInterval(() => clearArrays(), 3000);
+      this.timerSort = setInterval(() => clearArrays(), 5000);
     };
     const clearArrays = () => {
       this.alertElement.current.textContent = ``;
