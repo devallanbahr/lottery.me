@@ -12,6 +12,10 @@ body{
     background-color: #121212;
     color:#fff;
 
+    div{
+      text-align: center;
+    }
+
 }
 
 `;
