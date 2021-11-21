@@ -3,8 +3,7 @@ import { Main, AppMain, Input } from "../stylesheets/appStyle";
 
 // Add-ons
 /*
-- Make show the info in the page.
-*/
+ */
 // Add-ons
 
 class App extends Component {
@@ -24,6 +23,7 @@ class App extends Component {
 
     // Variables //
     this.randomNumbers;
+    this.timerSort;
     this.randomNumbersMin = Math.ceil(1);
     this.randomNumbersMax = Math.floor(60);
   }
@@ -58,16 +58,23 @@ class App extends Component {
         }
       }
       if (this.yourNumbersArr.length === 0) {
-        console.log("Você não acertou nenhum!");
+        this.numHits.current.textContent = `Você não acertou nenhum!`;
       } else {
-        console.log(
-          `Você acertou o nº ${this.yourNumbersArr}! dos números sorteados ${this.sortedNumbersArr}`
-        );
-        console.log(`Quantidade de acertos: ${this.yourNumbersArr.length}`);
+        this.numSorts.current.textContent = `Números sorteados: ${this.sortedNumbersArr}`;
+        this.numHits.current.textContent = `Você acertou o nº ${this.yourNumbersArr}!`;
+        this.qntdHits.current.textContent = `Quantidade de acertos: ${this.yourNumbersArr.length}`;
       }
+      this.timerSort = setInterval(() => clearArrays(), 3000);
+    };
+    const clearArrays = () => {
       this.selectedNumbersArr = [];
       this.sortedNumbersArr = [];
       this.yourNumbersArr = [];
+      this.numHits.current.textContent = ``;
+      this.numSorts.current.textContent = ``;
+      this.numHits.current.textContent = ``;
+      this.qntdHits.current.textContent = ``;
+      clearTimeout(this.timerSort);
     };
     return (
       <AppMain>
