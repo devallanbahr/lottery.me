@@ -16,11 +16,11 @@ body{
       text-align: center;
     }
     footer{
-      position: fixed;
+      position: absolute;
       display: flex;
       text-align: center;
       margin: 0 auto;
-      height: 75vh;
+      height: 20vh;
       width: 100%;
       left: 0%;
       justify-content: center;
@@ -44,9 +44,14 @@ export const AppMain = styled.div`
 `;
 
 export const Input = styled.input`
-  padding: 10px;
+  padding: 20px;
   margin: 5px;
-  background-color: #fff;
+  cursor: pointer;
+  background-color: #151515;
   border: 1px solid #aaa1;
-  color: #000;
+  color: #fff;
+
+  :hover {
+    background-color: #202020;
+  }
 `;
